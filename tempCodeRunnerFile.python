@@ -1,0 +1,11 @@
+
+
+lado = int(input("Quantas colunas: "))
+altura = int(input("Quanto de altura: "))
+simbolo = input("Qual será o simbolo: ")
+
+for i in range(altura):
+    for x in range(lado):
+        print(simbolo, end='')
+    print()
+
