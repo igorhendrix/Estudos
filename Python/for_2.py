@@ -1,0 +1,8 @@
+tarefas = []
+
+tarefas.append('Estudar')
+tarefas.append('Comer')
+tarefas.append('Dormir')
+
+for tarefa in tarefas:
+    print(f'Tarefa: {tarefa}')  
