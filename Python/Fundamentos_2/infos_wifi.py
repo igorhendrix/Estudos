@@ -1,0 +1,45 @@
+import subprocess  
+
+# 1. PROCURANDO AS INFORMAÇÕES DA REDE CONECTADA
+interfaces = subprocess.run(
+    'netsh wlan show interfaces',
+    capture_output=True,
+    text=True,
+    encoding="utf-8",
+    shell=True
+)
+
+#print(f"PRINTANDO INTERFACE {interfaces.stdout} \n\n ACABA AQUI")
+
+# 2. PROCURANDO E SALVANDO O NOME DA REDE NAS INFORMAÇÕES
+nome_rede = None
+download_vel = None
+update_vel = None
+sinal = None
+
+for linha in interfaces.stdout.splitlines():
+    if "Taxa de recepção (Mbps)" in linha:
+        download_vel = linha.split(":")[1].strip()
+        break
+
+for linha in interfaces.stdout.splitlines():
+    if "Taxa de transmissão (Mbps)" in linha:
+        update_vel = linha.split(":")[1].strip()
+        break
+
+for linha in interfaces.stdout.splitlines():
+    if "Sinal" in linha:
+        sinal = linha.split(":")[1].strip()
+        break
+
+if nome_rede:
+    print(f"Rede conectada {nome_rede}")
+
+if download_vel:
+    print(f"Velocidade de download {download_vel}Mbps")
+
+if update_vel:
+    print(f"Velocidade de update: {update_vel}Mbps")
+
+if sinal:
+    print(f"Sinal: {sinal}") 
