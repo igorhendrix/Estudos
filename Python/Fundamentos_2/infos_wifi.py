@@ -3,7 +3,7 @@ import time
 import os
 
 
-intervalo_segundos = 0.5
+intervalo_segundos = 1
 
 while True:       
     # 1. PROCURANDO AS INFORMAÇÕES DA REDE CONECTADA
