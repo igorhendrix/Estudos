@@ -1,45 +1,42 @@
 import subprocess  
+import time
+import os
 
-# 1. PROCURANDO AS INFORMAÇÕES DA REDE CONECTADA
-interfaces = subprocess.run(
-    'netsh wlan show interfaces',
-    capture_output=True,
-    text=True,
-    encoding="utf-8",
-    shell=True
-)
 
-#print(f"PRINTANDO INTERFACE {interfaces.stdout} \n\n ACABA AQUI")
+intervalo_segundos = 0.5
 
-# 2. PROCURANDO E SALVANDO O NOME DA REDE NAS INFORMAÇÕES
-nome_rede = None
-download_vel = None
-update_vel = None
-sinal = None
+while True:       
+    # 1. PROCURANDO AS INFORMAÇÕES DA REDE CONECTADA
+    interfaces = subprocess.run(
+        'netsh wlan show interfaces',
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        shell=True
+    )
 
-for linha in interfaces.stdout.splitlines():
-    if "Taxa de recepção (Mbps)" in linha:
-        download_vel = linha.split(":")[1].strip()
-        break
+    nome_rede = None
+    download_vel = None
+    update_vel = None
+    sinal = None
 
-for linha in interfaces.stdout.splitlines():
-    if "Taxa de transmissão (Mbps)" in linha:
-        update_vel = linha.split(":")[1].strip()
-        break
+    for linha in interfaces.stdout.splitlines():
+        if "Taxa de recepção (Mbps)" in linha:
+            download_vel = linha.split(":")[1].strip()
+            break
+    for linha in interfaces.stdout.splitlines():
+        if "Taxa de transmissão (Mbps)" in linha:
+            update_vel = linha.split(":")[1].strip()
+            break
+    for linha in interfaces.stdout.splitlines():
+        if "Sinal" in linha:
+            sinal = linha.split(":")[1].strip()
+            break
+    
+    os.system('cls')    
+    
+    print(f"D: {download_vel}Mbps")
+    print(f"U: {update_vel}Mbps")
+    print(f"S: {sinal}") 
 
-for linha in interfaces.stdout.splitlines():
-    if "Sinal" in linha:
-        sinal = linha.split(":")[1].strip()
-        break
-
-if nome_rede:
-    print(f"Rede conectada {nome_rede}")
-
-if download_vel:
-    print(f"Velocidade de download {download_vel}Mbps")
-
-if update_vel:
-    print(f"Velocidade de update: {update_vel}Mbps")
-
-if sinal:
-    print(f"Sinal: {sinal}") 
+    time.sleep(intervalo_segundos)
