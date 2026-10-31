@@ -6,9 +6,9 @@
 </head>
 <body>
 
-  <h1>🐍 Python Study Journey &amp; Data Automation</h1>
+  <h1> 📚 Study Journey</h1>
 
-  <p>Repositório dedicado ao registro prático da minha evolução em Python, partindo dos fundamentos da linguagem até a manipulação de dados, automação de fluxos e processos de ETL.</p>
+  <p>Repositório dedicado ao registro prático da minha evolução em programação, partindo dos fundamentos da linguagem até a manipulação de dados, automação de fluxos e processos de ETL.</p>
 
   <hr>
 
