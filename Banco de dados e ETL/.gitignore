@@ -1,0 +1,47 @@
+# ==========================================
+# Pastas do diretório local
+# ==========================================
+Aula+Python/
+Automação+Web/
+Banco+de+dados/
+Material/
+Origem/
+SQL+Server+E-Commerce+formato+CSV/
+
+# ==========================================
+# Ficheiros de Dados e Bases de Dados (ETL)
+# ==========================================
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.json
+*.sql.gz
+*.mdf
+*.ldf
+*.sqlite3
+*.db
+
+# ==========================================
+# Ambientes Virtuais e Caches de Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Ficheiros de configuração local / credenciais
+.env
+*.log
+
+# ==========================================
+# Ficheiros de Sistema e Editores
+# ==========================================
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
