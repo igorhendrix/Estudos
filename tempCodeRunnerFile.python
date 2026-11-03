@@ -1,13 +1,16 @@
-from datetime import datetime
+# atividade 1
 
-# atividade 1 -------------------------------------
-def function1():
-    actual = datetime.now()
-    actual_year = actual.year
-    
-    birth = int(input("Seu ano de nascimento: "))
-    idade = actual_year - birth
-    return idade
+def funcao1(x,y):
+    conta = x-y
+    return conta
 
-resultado = function1()
-print(f"Você tem {resultado} anos")
+saldo = "1000"
+numero = int(saldo)
+
+resgate = int(input("Quanto deseja resgatar? "))
+
+pergunta = input("Quer ver seu saldo agora? ")
+
+if 'S' in pergunta.upper():
+    saldo_atual = funcao1(numero, resgate)
+    print(f"seu saldo atual é R${saldo_atual}")
