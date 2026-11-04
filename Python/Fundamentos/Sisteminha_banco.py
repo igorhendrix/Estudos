@@ -1,8 +1,14 @@
 import os
 
 def resgatando(saldo, resgate):
-    conta = saldo - resgate
-    return conta
+
+    if saldo < resgate:
+        print("Saldo insuficiente!")
+        return saldo
+    else:
+        conta = saldo - resgate
+        print("Resgate feito com sucesso!\n")        
+        return conta
 
 def depositando(saldo, deposito):
     conta = saldo + deposito
@@ -30,12 +36,10 @@ while i!=0:
         os.system('cls')
         printSaldo(saldo)
         
-
     if opcao == 2:
         os.system('cls')
         resgate = int(input("\nQuanto deseja resgatar?\nR$"))
         saldo = resgatando(saldo, resgate)
-        print("Resgate feito com sucesso!\n")
         
     if opcao == 3:
         os.system('cls')
