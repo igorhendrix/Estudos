@@ -1,5 +1,19 @@
 import os
 import Fcontas
+import FgerenciadorUsuarios
+
+
+
+def login_test():
+    opcao = int(input("[1] Fazer login\n[2] Criar conta\n[0]Sair do sistema\n"))
+
+    if opcao == 1:
+        usuario = input("Digite seu email: ")
+        senha = input("Digite sua senha: ")
+        
+    elif opcao == 2:
+        FgerenciadorUsuarios.new_User()
+
 
 def iniciar_interface():
 
