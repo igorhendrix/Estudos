@@ -33,4 +33,5 @@ def iniciar_interface():
         if opcao == 0:
             os.system('cls')
             print("Obrigado, volte sempre!")
-            
+            break
+
