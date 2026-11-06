@@ -1,6 +1,14 @@
 {
-    "igor@gmail.com": {
-        "senha": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
-        "saldo": 0.0
+    "igorhendrix@gmail.com": {
+        "senha": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
+        "saldo": 0.0,
+        "cpf": "17055599968",
+        "nascimento": "04/04/2003"
+    },
+    "erasmo@yahoo.com": {
+        "senha": "2a8610aefdd0028c6bf074dd18721c0ef8bc43241cc7a653d7aedf2036bdf6b3",
+        "saldo": 0.0,
+        "cpf": "58966644453",
+        "nascimento": "01/01/1968"
     }
 }

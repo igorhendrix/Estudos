@@ -8,11 +8,14 @@ def criptografar_senha(new_senha):
     # Transforma a senha em um Hash SHA-256 (Padrão de mercado)
     return hashlib.sha256(new_senha.encode()).hexdigest()
 
+def criptografar_cpf(new_cpf):
+    # Transforma a senha em um Hash SHA-256 (Padrão de mercado)
+    return hashlib.sha256(new_cpf.encode()).hexdigest()
+
 
 def new_User():
-    #new_cpf = input("Digite seu CPF: ")
-    #new_birth = input("Digite sua data de nascimento: ")
-
+    new_cpf = input("Digite seu CPF: ")
+    new_birth = input("Digite sua data de nascimento: ")
     new_usuario = input("Digite seu email: ")
     new_senha = input("Digite sua senha: ")
 
@@ -30,7 +33,9 @@ def new_User():
     # 3. Adiciona o novo usuário com senha criptografada
     usuarios[new_usuario] = {
         "senha" : criptografar_senha(new_senha),
-        "saldo" : 0.0
+        "saldo" : 0.0,
+        "cpf" : criptografar_cpf(new_cpf),
+        "nascimento" : new_birth
     }
 
     # 4. Salva tido no arquivo JSON
