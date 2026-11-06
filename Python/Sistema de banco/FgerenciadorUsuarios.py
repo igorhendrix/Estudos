@@ -1,6 +1,7 @@
 import json
 import hashlib
 import os
+from datetime import datetime
 
 ARQUIVO_USUARIOS = 'usuarios.json'
 
@@ -65,9 +66,24 @@ def validar_cpf(cpf):
 
     return True
 
+def validar_data(data_str):
+    try:
+        # Tenta converter a string "dd/mm/aaaa" em um objeto datetime real
+        datetime.strptime(data_str, "%d/%m/%Y")
+        return True
+    except ValueError:
+        # Se o formato estiver errado ou for uma data inexistente (ex: 30/02), cai aqui
+        print("Data inválida, tente novamente.\n")
+        return False
+    
 def new_User():
     new_cpf = input("Digite seu CPF: ")
-    new_birth = input("Digite sua data de nascimento: ")
+
+    while True:
+        new_birth = input("Digite sua data de nascimento: ")
+        if validar_data(new_birth):
+            break
+
     new_usuario = input("Digite seu email: ")
     new_senha = input("Digite sua senha: ")
 

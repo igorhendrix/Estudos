@@ -16,5 +16,11 @@
         "saldo": 0.0,
         "cpf": "3504afde4e3fa717ba191976bed110b183a78025a4256b55325b11d339a9416c",
         "nascimento": "04/04/2003"
+    },
+    "teste@gmail.com": {
+        "senha": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+        "saldo": 0.0,
+        "cpf": "dc2c509c0a2c71f46b8a413124e1c6e154295512829a4ca83f57ccb05d2ccab4",
+        "nascimento": "01/01/1900"
     }
 }
