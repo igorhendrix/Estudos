@@ -10,14 +10,22 @@ def iniciar_interface():
 
     print(" ---------- Bem vindo ao Banco! ---------- ")
 
-    opcao1 = int(input("[1] Fazer login\n[2] Criar conta\n"))
+    i=1
+    while i!=0:
 
-    if opcao1 == 1:
-        if not FgerenciadorUsuarios.fazer_login():
-            
-    elif opcao1 == 2:
-        FgerenciadorUsuarios.new_User()
+        opcao1 = int(input("[1] Fazer login\n[2] Criar conta\n"))
 
+        os.system('cls')
+        
+        if opcao1 == 1:
+            if FgerenciadorUsuarios.fazer_login():
+                i=0
+                           
+        elif opcao1 == 2:
+            if FgerenciadorUsuarios.new_User():
+                i=0
+
+    
     saldo = 10000
 
     i=1
