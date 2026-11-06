@@ -4,6 +4,33 @@ import os
 
 ARQUIVO_USUARIOS = 'usuarios.json'
 
+def fazer_login():
+    usuario = input("Digite seu email: ")
+    senha = input("Digite sua senha: ")
+
+    # 1. Verifica se o arquivo de usuários existe
+    if not os.path.exists(ARQUIVO_USUARIOS):
+        print("Nenhum usuário cadastrado no sistema.")
+        return False
+
+    # 2. Carrega os usuários
+    with open(ARQUIVO_USUARIOS, 'r', encoding='utf-8') as arquivo:
+        usuarios = json.load(arquivo)
+
+    # 3. Verifica se o e-mail existe na base de dados
+    if usuario not in usuarios:
+        print("E-mail não cadastrado!")
+        return False
+
+    # 4. Compara o hash da senha digitada com a senha armazenada
+    senha_hash = criptografar_senha(senha)
+    if usuarios[usuario]["senha"] == senha_hash:
+        print(f"\nLogin realizado com sucesso! Bem-vindo(a), {usuario}!")
+        return True
+    else:
+        print("Senha incorreta!")
+        return False
+
 def criptografar_senha(new_senha):
     # Transforma a senha em um Hash SHA-256 (Padrão de mercado)
     return hashlib.sha256(new_senha.encode()).hexdigest()
@@ -83,6 +110,3 @@ def new_User():
 
     print("Usuario criado!")
     return True
-
-
-new_User()

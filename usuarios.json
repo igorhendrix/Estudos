@@ -10,5 +10,11 @@
         "saldo": 0.0,
         "cpf": "58966644453",
         "nascimento": "01/01/1968"
+    },
+    "igu@gmail.com": {
+        "senha": "5b7559adef05389ab725ff7b1075238e3fe9cdd1d7647b9b45e1d93295c05fff",
+        "saldo": 0.0,
+        "cpf": "3504afde4e3fa717ba191976bed110b183a78025a4256b55325b11d339a9416c",
+        "nascimento": "04/04/2003"
     }
 }

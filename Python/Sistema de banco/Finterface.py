@@ -4,20 +4,19 @@ import FgerenciadorUsuarios
 
 
 
-def login_test():
-    opcao = int(input("[1] Fazer login\n[2] Criar conta\n[0]Sair do sistema\n"))
-
-    if opcao == 1:
-        usuario = input("Digite seu email: ")
-        senha = input("Digite sua senha: ")
-        
-    elif opcao == 2:
-        FgerenciadorUsuarios.new_User()
 
 
 def iniciar_interface():
 
     print(" ---------- Bem vindo ao Banco! ---------- ")
+
+    opcao1 = int(input("[1] Fazer login\n[2] Criar conta\n"))
+
+    if opcao1 == 1:
+        if not FgerenciadorUsuarios.fazer_login():
+            
+    elif opcao1 == 2:
+        FgerenciadorUsuarios.new_User()
 
     saldo = 10000
 
@@ -25,26 +24,26 @@ def iniciar_interface():
     while i!=0:
 
         print("\nDigite o que deseja fazer: ")
-        opcao = int(input("[1] Ver saldo atual\n[2] Resgatar dinheiro\n[3]Depositar dinheiro\n[0]Sair do sistema\n"))
+        opcao2 = int(input("[1] Ver saldo atual\n[2] Resgatar dinheiro\n[3]Depositar dinheiro\n[0]Sair do sistema\n"))
 
-        i = opcao
+        i = opcao2
 
-        if opcao == 1:
+        if opcao2 == 1:
             os.system('cls')
             Fcontas.printSaldo(saldo)
             
-        if opcao == 2:
+        if opcao2 == 2:
             os.system('cls')
             resgate = int(input("\nQuanto deseja resgatar?\nR$"))
             saldo = Fcontas.resgatando(saldo, resgate)
             
-        if opcao == 3:
+        if opcao2 == 3:
             os.system('cls')
             deposito = int(input("Quanto deseja depositar?\nR$"))
             saldo = Fcontas.depositando(saldo, deposito)
             print("Deposito feito!")
 
-        if opcao == 0:
+        if opcao2 == 0:
             os.system('cls')
             print("Obrigado, volte sempre!")
             break
